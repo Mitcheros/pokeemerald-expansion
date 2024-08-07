@@ -1075,7 +1075,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 
-	.include "data/maps/LittlerootTown_NewBirchsLab/scripts.inc"
+	.include "data/maps/NewBirchesLab/scripts.inc"
 
 	.include "data/maps/LittlerootTown_Pokemart/scripts.inc"
 

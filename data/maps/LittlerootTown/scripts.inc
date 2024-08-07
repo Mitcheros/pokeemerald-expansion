@@ -2043,11 +2043,11 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 # 1022 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
 
-LittleRootTown_EventScript_LittlerootTown_NewBirchsLabSign::
+LittleRootTown_EventScript_NewBirchesLabSign::
 # 1028 "data/maps/LittlerootTown/scripts.pory"
 	lockall
 # 1029 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_LittlerootTown_NewBirchsLabSign_Text_0
+	msgbox LittleRootTown_EventScript_NewBirchesLabSign_Text_0
 # 1030 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	return
@@ -2240,7 +2240,7 @@ StopPlayer:
 	walk_down
 	step_end
 
-LittleRootTown_EventScript_LittlerootTown_NewBirchsLabSign_Text_0:
+LittleRootTown_EventScript_NewBirchesLabSign_Text_0:
 # 1029 "data/maps/LittlerootTown/scripts.pory"
 	.string "Professor Birch's New and Improved Lab$"
 

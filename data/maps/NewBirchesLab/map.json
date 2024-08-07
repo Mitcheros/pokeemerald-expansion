@@ -1,6 +1,6 @@
 {
   "id": "MAP_NEW_BIRCHES_LAB",
-  "name": "LittlerootTown_NewBirchsLab",
+  "name": "NewBirchesLab",
   "layout": "LAYOUT_NEW_BIRCHES_LAB",
   "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
@@ -17,53 +17,53 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 5,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_NewBirchsLab_EventScript_PokeballOne",
+      "script": "NewBirchesLab_EventScript_PokeballOne",
       "flag": "STARTER_BALL_ONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 6,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_NewBirchsLab_EventScript_PokeballTwo",
+      "script": "NewBirchesLab_EventScript_PokeballTwo",
       "flag": "STARTER_BALL_TWO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 7,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_NewBirchsLab_EventScript_PokeballThree",
+      "script": "NewBirchesLab_EventScript_PokeballThree",
       "flag": "STARTER_BALL_THREE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 8,
-      "y": 5,
+      "x": 6,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_NewBirchsLab_EventScript_Birch",
+      "script": "NewBirchesLab_EventScript_Birch",
       "flag": "0"
     }
   ],
@@ -84,7 +84,42 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "LITTLEROOT_STATE",
+      "var_value": "0",
+      "script": "Start_StarterChoose_Sequence2"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "var": "LITTLEROOT_STATE",
+      "var_value": "0",
+      "script": "Start_StarterChoose_Sequence"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "var": "LITTLEROOT_STATE",
+      "var_value": "1",
+      "script": "StopLeaving"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "LITTLEROOT_STATE",
+      "var_value": "1",
+      "script": "StopLeaving"
+    }
   ],
   "bg_events": [
 

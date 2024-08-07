@@ -1024,6 +1024,7 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 `
 
+script LittleRootTown_EventScript_NewBirchesLabSign {
     lockall
     msgbox("Professor Birch's New and Improved Lab")
     releaseall
