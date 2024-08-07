@@ -1,48 +1,58 @@
-mapscripts NewBirchesLab_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: NewBirchesLab_EventScript_BallDefault
+mapscripts LittlerootTown_NewBirchsLab_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: LittlerootTown_NewBirchsLab_EventScript_BallDefault
 }
  
-script NewBirchesLab_EventScript_BallDefault{
+script LittlerootTown_NewBirchsLab_EventScript_BallDefault{
     setvar(VAR_STARTER_REGION, 0)
 }
  
-script NewBirchesLab_EventScript_Birch{
-    lockall
-    faceplayer
-    if(!(flag(FLAG_HIDE_POKEBALL1) || flag(FLAG_HIDE_POKEBALL2) || flag(FLAG_HIDE_POKEBALL3))){
-        msgbox("Hello, would you like to see more?", MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES){
-            if(var(VAR_STARTER_REGION) != 2){
-                addvar(VAR_STARTER_REGION, 1)
-            }
-            else{
-                setvar(VAR_STARTER_REGION, 0)
-            }
-            msgbox("Choose your Pokemon wisely")
+script LittlerootTown_NewBirchsLab_EventScript_Birch{
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
+        lockall
+        faceplayer
+        message("Hello, would you like to see more?")
+        multichoice(25, 5, MULTI_STARTER_CHOICE,0)
+        closemessage
+        if(var(VAR_RESULT) == 0) {
+            call(StarterFade)
+            setvar(VAR_STARTER_REGION, 2)
         }
-        else{
-            msgbox("Choose your Pokemon wisely")
+        elif (var(VAR_RESULT) == 1) {
+            call(StarterFade)
+            setvar(VAR_STARTER_REGION, 1)
         }
+        elif (var(VAR_RESULT) == 2) {
+            call(StarterFade)
+            setvar(VAR_STARTER_REGION, 0)
+        }
+        msgbox("Choose wisely...")
+        waitmessage
+        releaseall
     }
     else{
-        msgbox("Take care of your Pokemon")
+        msgbox("Take care of your Pokemon", MSGBOX_NPC)
     }
-    waitmessage
-    releaseall
     end
 }
  
-script NewBirchesLab_EventScript_PokeballOne{
+script StarterFade {
+    fadescreen(FADE_TO_BLACK)
+    delay(20)
+    fadescreen(FADE_FROM_BLACK)
+    return
+}
+
+script LittlerootTown_NewBirchsLab_EventScript_PokeballOne{
     lockall
-    if(!(flag(FLAG_HIDE_POKEBALL1) || flag(FLAG_HIDE_POKEBALL2) || flag(FLAG_HIDE_POKEBALL3))){
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
         if(var(VAR_STARTER_REGION) == 0){
-            call(NewBirchesLab_EventScript_Mudkip)
+            call(LittlerootTown_NewBirchsLab_EventScript_Mudkip)
         }
         elif(var(VAR_STARTER_REGION) == 1){
-            call(NewBirchesLab_EventScript_Totodile)
+            call(LittlerootTown_NewBirchsLab_EventScript_Totodile)
         }
         elif(var(VAR_STARTER_REGION) == 2){
-            call(NewBirchesLab_EventScript_Squirtle)
+            call(LittlerootTown_NewBirchsLab_EventScript_Squirtle)
         }
     }
     else{
@@ -53,17 +63,17 @@ script NewBirchesLab_EventScript_PokeballOne{
     end
 }
  
-script NewBirchesLab_EventScript_PokeballTwo{
+script LittlerootTown_NewBirchsLab_EventScript_PokeballTwo{
     lockall
-    if(!(flag(FLAG_HIDE_POKEBALL1) || flag(FLAG_HIDE_POKEBALL2) || flag(FLAG_HIDE_POKEBALL3))){
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
         if(var(VAR_STARTER_REGION) == 0){
-            call(NewBirchesLab_EventScript_Treecko)
+            call(LittlerootTown_NewBirchsLab_EventScript_Treecko)
         }
         elif(var(VAR_STARTER_REGION) == 1){
-            call(NewBirchesLab_EventScript_Chikorita)
+            call(LittlerootTown_NewBirchsLab_EventScript_Chikorita)
         }
         elif(var(VAR_STARTER_REGION) == 2){
-            call(NewBirchesLab_EventScript_Bulbasaur)
+            call(LittlerootTown_NewBirchsLab_EventScript_Bulbasaur)
         }
     }
     else{
@@ -74,17 +84,17 @@ script NewBirchesLab_EventScript_PokeballTwo{
     end
 }
  
-script NewBirchesLab_EventScript_PokeballThree{
+script LittlerootTown_NewBirchsLab_EventScript_PokeballThree{
     lockall
-    if(!(flag(FLAG_HIDE_POKEBALL1) || flag(FLAG_HIDE_POKEBALL2) || flag(FLAG_HIDE_POKEBALL3))){
+    if(!(flag(STARTER_BALL_ONE) || flag(STARTER_BALL_TWO) || flag(STARTER_BALL_THREE))){
         if(var(VAR_STARTER_REGION) == 0){
-            call(NewBirchesLab_EventScript_Torchic)
+            call(LittlerootTown_NewBirchsLab_EventScript_Torchic)
         }
         elif(var(VAR_STARTER_REGION) == 1){
-            call(NewBirchesLab_EventScript_Cyndaquil)
+            call(LittlerootTown_NewBirchsLab_EventScript_Cyndaquil)
         }
         elif(var(VAR_STARTER_REGION) == 2){
-            call(NewBirchesLab_EventScript_Charmander)
+            call(LittlerootTown_NewBirchsLab_EventScript_Charmander)
         }
     }
     else{
@@ -96,23 +106,24 @@ script NewBirchesLab_EventScript_PokeballThree{
 }
  
  
-script NewBirchesLab_EventScript_Mudkip{
+script LittlerootTown_NewBirchsLab_EventScript_Mudkip{
     showmonpic(SPECIES_MUDKIP, 10,3)
     msgbox("Do you want to choose Mudkip?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_MUDKIP, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Mudkip")
             removeobject(1)
-            setflag(FLAG_HIDE_POKEBALL1)
+            setflag(STARTER_BALL_ONE)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Mudkip")
             removeobject(1)
-            setflag(FLAG_HIDE_POKEBALL1)
+            setflag(STARTER_BALL_ONE)
             call(NicknameBoxMon)
         }
         else{
@@ -122,28 +133,29 @@ script NewBirchesLab_EventScript_Mudkip{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Totodile{
+script LittlerootTown_NewBirchsLab_EventScript_Totodile{
     showmonpic(SPECIES_TOTODILE, 10,3)
     msgbox("Do you want to choose Totodile?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_TOTODILE, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Totodile")
             removeobject(1)
-            setflag(FLAG_HIDE_POKEBALL1)
+            setflag(STARTER_BALL_ONE)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Totodile")
             removeobject(1)
-            setflag(FLAG_HIDE_POKEBALL1)
+            setflag(STARTER_BALL_ONE)
             call(NicknameBoxMon)
         }
         else{
@@ -153,28 +165,29 @@ script NewBirchesLab_EventScript_Totodile{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Squirtle{
+script LittlerootTown_NewBirchsLab_EventScript_Squirtle{
     showmonpic(SPECIES_SQUIRTLE, 10,3)
     msgbox("Do you want to choose Squirtle?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_SQUIRTLE, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Squirtle")
             removeobject(1)
-            setflag(FLAG_HIDE_POKEBALL1)
+            setflag(STARTER_BALL_ONE)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Squirtle")
             removeobject(1)
-            setflag(FLAG_HIDE_POKEBALL1)
+            setflag(STARTER_BALL_ONE)
             call(NicknameBoxMon)
         }
         else{
@@ -184,28 +197,29 @@ script NewBirchesLab_EventScript_Squirtle{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Treecko{
+script LittlerootTown_NewBirchsLab_EventScript_Treecko{
     showmonpic(SPECIES_TREECKO, 10,3)
     msgbox("Do you want to choose Treecko?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_TREECKO, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Treecko")
             removeobject(2)
-            setflag(FLAG_HIDE_POKEBALL2)
+            setflag(STARTER_BALL_TWO)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Treecko")
             removeobject(2)
-            setflag(FLAG_HIDE_POKEBALL2)
+            setflag(STARTER_BALL_TWO)
             call(NicknameBoxMon)
         }
         else{
@@ -215,28 +229,29 @@ script NewBirchesLab_EventScript_Treecko{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Chikorita{
+script LittlerootTown_NewBirchsLab_EventScript_Chikorita{
     showmonpic(SPECIES_CHIKORITA, 10,3)
     msgbox("Do you want to choose Chikorita?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_CHIKORITA, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Chikorita")
             removeobject(2)
-            setflag(FLAG_HIDE_POKEBALL2)
+            setflag(STARTER_BALL_TWO)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Chikorita")
             removeobject(2)
-            setflag(FLAG_HIDE_POKEBALL2)
+            setflag(STARTER_BALL_TWO)
             call(NicknameBoxMon)
         }
         else{
@@ -246,28 +261,29 @@ script NewBirchesLab_EventScript_Chikorita{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Bulbasaur{
+script LittlerootTown_NewBirchsLab_EventScript_Bulbasaur{
     showmonpic(SPECIES_BULBASAUR, 10,3)
     msgbox("Do you want to choose Bulbasaur?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_BULBASAUR, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Bulbasaur")
             removeobject(2)
-            setflag(FLAG_HIDE_POKEBALL2)
+            setflag(STARTER_BALL_TWO)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Bulbasaur")
             removeobject(2)
-            setflag(FLAG_HIDE_POKEBALL2)
+            setflag(STARTER_BALL_TWO)
             call(NicknameBoxMon)
         }
         else{
@@ -277,28 +293,29 @@ script NewBirchesLab_EventScript_Bulbasaur{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Torchic{
+script LittlerootTown_NewBirchsLab_EventScript_Torchic{
     showmonpic(SPECIES_TORCHIC, 10,3)
     msgbox("Do you want to choose Torchic?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_TORCHIC, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Torchic")
             removeobject(3)
-            setflag(FLAG_HIDE_POKEBALL3)
+            setflag(STARTER_BALL_THREE)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Torchic")
             removeobject(3)
-            setflag(FLAG_HIDE_POKEBALL3)
+            setflag(STARTER_BALL_THREE)
             call(NicknameBoxMon)
         }
         else{
@@ -308,28 +325,29 @@ script NewBirchesLab_EventScript_Torchic{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Cyndaquil{
+script LittlerootTown_NewBirchsLab_EventScript_Cyndaquil{
     showmonpic(SPECIES_CYNDAQUIL, 10,3)
     msgbox("Do you want to choose Cyndaquil?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_CYNDAQUIL, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Cyndaquil")
             removeobject(3)
-            setflag(FLAG_HIDE_POKEBALL3)
+            setflag(STARTER_BALL_THREE)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Cyndaquil")
             removeobject(3)
-            setflag(FLAG_HIDE_POKEBALL3)
+            setflag(STARTER_BALL_THREE)
             call(NicknameBoxMon)
         }
         else{
@@ -339,28 +357,29 @@ script NewBirchesLab_EventScript_Cyndaquil{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
  
-script NewBirchesLab_EventScript_Charmander{
+script LittlerootTown_NewBirchsLab_EventScript_Charmander{
     showmonpic(SPECIES_CHARMANDER, 10,3)
     msgbox("Do you want to choose Charmander?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
         givemon(SPECIES_CHARMANDER, 50, ITEM_MASTER_BALL)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Charmander")
             removeobject(3)
-            setflag(FLAG_HIDE_POKEBALL3)
+            setflag(STARTER_BALL_THREE)
             call(NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("Recieved Charmander")
             removeobject(3)
-            setflag(FLAG_HIDE_POKEBALL3)
+            setflag(STARTER_BALL_THREE)
             call(NicknameBoxMon)
         }
         else{
@@ -370,7 +389,7 @@ script NewBirchesLab_EventScript_Charmander{
     }
     else{
         hidemonpic
-        msgbox(NewBirchesLab_NotChosen)
+        msgbox(LittlerootTown_NewBirchsLab_NotChosen)
     }
  
 }
@@ -396,6 +415,6 @@ script NicknameBoxMon{
     msgbox("Transferred to PC")
 }
  
-text NewBirchesLab_NotChosen{
+text LittlerootTown_NewBirchsLab_NotChosen{
     "You did not choose the Pokemon"
 }
