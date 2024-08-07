@@ -100,7 +100,9 @@
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
     "LittlerootTown_ProfessorBirchsLab",
-    "NewBirchesLab"
+    "LittlerootTown_NewBirchsLab",
+    "LittlerootTown_Pokemart",
+    "LittlerootTown_Pokecenter"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
