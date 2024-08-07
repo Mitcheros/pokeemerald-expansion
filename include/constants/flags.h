@@ -42,12 +42,12 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_HIDE_POKEBALL1  0x20 // Unused Flag
-#define FLAG_HIDE_POKEBALL2  0x21 // Unused Flag
-#define FLAG_HIDE_POKEBALL3  0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
+#define STARTER_BALL_ONE     0x20 // Unused Flag
+#define STARTER_BALL_TWO     0x21 // Unused Flag
+#define STARTER_BALL_THREE   0x22 // Unused Flag
+#define FLAG_HIDE_MAY        0x23 // Unused Flag
+#define FLAG_MAY_BATTLE      0x24 // Unused Flag
+#define FLAG_HIDE_KYOGRE     0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag

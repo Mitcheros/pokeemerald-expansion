@@ -3046,4 +3046,9 @@ extern const u8 gText_PlantBerry[];
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
 
+// Starter Pokemon Littleroot Town
+extern const u8 gText_JohtoStarter[];
+extern const u8 gText_HoennStarter[];
+extern const u8 gText_KantoStarter[];
+
 #endif // GUARD_STRINGS_H
