@@ -1036,19 +1036,15 @@ script LittlerootTown_EventScript_SetupRivalBattle {
 		setvar(LITTLEROOT_STATE, 0)
 	}
 	else {
-		if(var(LITTLEROOT_STATE) == 0) {
+		if(var(LITTLEROOT_STATE) == 2) {
 			clearflag(FLAG_HIDE_MAY)
 		}
 	}
 }
  
 script LittlerootTown_EventScript_MayRivalBattle{
- 
 	trainerbattle_single(TRAINER_MAY_ROUTE_103_TORCHIC, May_Intro, May_Outro, RivalBattleOver)
-	msgbox(PostBattle_May, MSGBOX_AUTOCLOSE) 
-	waitmessage
     end
- 
 }
 
 script RivalBattleOver {
@@ -1057,7 +1053,7 @@ script RivalBattleOver {
 	waitmovement(0)
 	removeobject(9)
 	setflag(FLAG_HIDE_MAY)
-	setvar(LITTLEROOT_STATE, 1)
+	setvar(LITTLEROOT_STATE, 3)
 	waitmessage
 	releaseall
 }

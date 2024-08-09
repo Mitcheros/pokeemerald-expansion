@@ -38,9 +38,7 @@ movement ProfMove{
     walk_up
     face_down
 }
- 
- 
- 
+
 text BeginAdventureText{
     "{COLOR RED}{SHADOW LIGHT_RED}Birch:{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Hello {PLAYER}, my name is Prof Birch\n"
     "This is my lab.\p"

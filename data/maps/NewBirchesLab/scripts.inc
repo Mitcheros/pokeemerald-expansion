@@ -79,454 +79,454 @@ ProfMove:
 	step_end
 
 StopLeaving::
-# 56 "data/maps/NewBirchesLab/scripts.pory"
+# 54 "data/maps/NewBirchesLab/scripts.pory"
 	lockall
-# 57 "data/maps/NewBirchesLab/scripts.pory"
+# 55 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox StopLeaving_Text_0
-# 58 "data/maps/NewBirchesLab/scripts.pory"
+# 56 "data/maps/NewBirchesLab/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, DoNotLeave
-# 59 "data/maps/NewBirchesLab/scripts.pory"
+# 57 "data/maps/NewBirchesLab/scripts.pory"
 	waitmovement 0
-# 60 "data/maps/NewBirchesLab/scripts.pory"
+# 58 "data/maps/NewBirchesLab/scripts.pory"
 	releaseall
 	return
 
 
-# 63 "data/maps/NewBirchesLab/scripts.pory"
+# 61 "data/maps/NewBirchesLab/scripts.pory"
 DoNotLeave:
-# 64 "data/maps/NewBirchesLab/scripts.pory"
+# 62 "data/maps/NewBirchesLab/scripts.pory"
 	walk_up
 	step_end
 
 NewBirchesLab_EventScript_Birch::
-# 68 "data/maps/NewBirchesLab/scripts.pory"
+# 66 "data/maps/NewBirchesLab/scripts.pory"
 	goto_if_unset FLAG_SYS_POKEMON_GET, NewBirchesLab_EventScript_Birch_2
-# 91 "data/maps/NewBirchesLab/scripts.pory"
+# 89 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_Birch_Text_2, MSGBOX_NPC
 NewBirchesLab_EventScript_Birch_1:
 	end
 
 NewBirchesLab_EventScript_Birch_2:
-# 69 "data/maps/NewBirchesLab/scripts.pory"
+# 67 "data/maps/NewBirchesLab/scripts.pory"
 	lock
-# 70 "data/maps/NewBirchesLab/scripts.pory"
+# 68 "data/maps/NewBirchesLab/scripts.pory"
 	faceplayer
-# 71 "data/maps/NewBirchesLab/scripts.pory"
+# 69 "data/maps/NewBirchesLab/scripts.pory"
 	message NewBirchesLab_EventScript_Birch_Text_0
-# 72 "data/maps/NewBirchesLab/scripts.pory"
+# 70 "data/maps/NewBirchesLab/scripts.pory"
 	multichoice 25, 5, MULTI_STARTER_CHOICE, 0
-# 73 "data/maps/NewBirchesLab/scripts.pory"
+# 71 "data/maps/NewBirchesLab/scripts.pory"
 	closemessage
-# 74 "data/maps/NewBirchesLab/scripts.pory"
+# 72 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq NewBirchesLab_EventScript_Birch_6
-# 78 "data/maps/NewBirchesLab/scripts.pory"
+# 76 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq NewBirchesLab_EventScript_Birch_7
-# 82 "data/maps/NewBirchesLab/scripts.pory"
+# 80 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq NewBirchesLab_EventScript_Birch_8
 NewBirchesLab_EventScript_Birch_5:
-# 86 "data/maps/NewBirchesLab/scripts.pory"
+# 84 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_Birch_Text_1
-# 87 "data/maps/NewBirchesLab/scripts.pory"
+# 85 "data/maps/NewBirchesLab/scripts.pory"
 	waitmessage
-# 88 "data/maps/NewBirchesLab/scripts.pory"
+# 86 "data/maps/NewBirchesLab/scripts.pory"
 	release
 	goto NewBirchesLab_EventScript_Birch_1
 
 NewBirchesLab_EventScript_Birch_6:
-# 75 "data/maps/NewBirchesLab/scripts.pory"
+# 73 "data/maps/NewBirchesLab/scripts.pory"
 	call StarterFade
-# 76 "data/maps/NewBirchesLab/scripts.pory"
+# 74 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_REGION, 2
 	goto NewBirchesLab_EventScript_Birch_5
 
 NewBirchesLab_EventScript_Birch_7:
-# 79 "data/maps/NewBirchesLab/scripts.pory"
+# 77 "data/maps/NewBirchesLab/scripts.pory"
 	call StarterFade
-# 80 "data/maps/NewBirchesLab/scripts.pory"
+# 78 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_REGION, 1
 	goto NewBirchesLab_EventScript_Birch_5
 
 NewBirchesLab_EventScript_Birch_8:
-# 83 "data/maps/NewBirchesLab/scripts.pory"
+# 81 "data/maps/NewBirchesLab/scripts.pory"
 	call StarterFade
-# 84 "data/maps/NewBirchesLab/scripts.pory"
+# 82 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_REGION, 0
 	goto NewBirchesLab_EventScript_Birch_5
 
 
 StarterFade::
-# 97 "data/maps/NewBirchesLab/scripts.pory"
+# 95 "data/maps/NewBirchesLab/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 98 "data/maps/NewBirchesLab/scripts.pory"
+# 96 "data/maps/NewBirchesLab/scripts.pory"
 	delay 20
-# 99 "data/maps/NewBirchesLab/scripts.pory"
+# 97 "data/maps/NewBirchesLab/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 	return
 
 
 NewBirchesLab_EventScript_PokeballOne::
-# 104 "data/maps/NewBirchesLab/scripts.pory"
+# 102 "data/maps/NewBirchesLab/scripts.pory"
 	lockall
-# 105 "data/maps/NewBirchesLab/scripts.pory"
+# 103 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_TEMP_0, 1
-# 106 "data/maps/NewBirchesLab/scripts.pory"
+# 104 "data/maps/NewBirchesLab/scripts.pory"
 	goto_if_unset FLAG_SYS_POKEMON_GET, NewBirchesLab_EventScript_PokeballOne_2
-# 124 "data/maps/NewBirchesLab/scripts.pory"
+# 122 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_PokeballOne_Text_0
 NewBirchesLab_EventScript_PokeballOne_1:
-# 126 "data/maps/NewBirchesLab/scripts.pory"
+# 124 "data/maps/NewBirchesLab/scripts.pory"
 	waitmessage
-# 127 "data/maps/NewBirchesLab/scripts.pory"
+# 125 "data/maps/NewBirchesLab/scripts.pory"
 	releaseall
 	end
 
 NewBirchesLab_EventScript_PokeballOne_2:
-# 107 "data/maps/NewBirchesLab/scripts.pory"
+# 105 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 0
 	goto_if_eq NewBirchesLab_EventScript_PokeballOne_5
-# 112 "data/maps/NewBirchesLab/scripts.pory"
+# 110 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 1
 	goto_if_eq NewBirchesLab_EventScript_PokeballOne_6
-# 117 "data/maps/NewBirchesLab/scripts.pory"
+# 115 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 2
 	goto_if_eq NewBirchesLab_EventScript_PokeballOne_7
 	goto NewBirchesLab_EventScript_PokeballOne_1
 
 NewBirchesLab_EventScript_PokeballOne_5:
-# 108 "data/maps/NewBirchesLab/scripts.pory"
+# 106 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
-# 109 "data/maps/NewBirchesLab/scripts.pory"
+# 107 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_MUDKIP
-# 110 "data/maps/NewBirchesLab/scripts.pory"
+# 108 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballOne_1
 
 NewBirchesLab_EventScript_PokeballOne_6:
-# 113 "data/maps/NewBirchesLab/scripts.pory"
+# 111 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
-# 114 "data/maps/NewBirchesLab/scripts.pory"
+# 112 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_TOTODILE
-# 115 "data/maps/NewBirchesLab/scripts.pory"
+# 113 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballOne_1
 
 NewBirchesLab_EventScript_PokeballOne_7:
-# 118 "data/maps/NewBirchesLab/scripts.pory"
+# 116 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
-# 119 "data/maps/NewBirchesLab/scripts.pory"
+# 117 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_SQUIRTLE
-# 120 "data/maps/NewBirchesLab/scripts.pory"
+# 118 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballOne_1
 
 
 NewBirchesLab_EventScript_PokeballTwo::
-# 132 "data/maps/NewBirchesLab/scripts.pory"
+# 130 "data/maps/NewBirchesLab/scripts.pory"
 	lockall
-# 133 "data/maps/NewBirchesLab/scripts.pory"
+# 131 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_TEMP_0, 2
-# 134 "data/maps/NewBirchesLab/scripts.pory"
+# 132 "data/maps/NewBirchesLab/scripts.pory"
 	goto_if_unset FLAG_SYS_POKEMON_GET, NewBirchesLab_EventScript_PokeballTwo_2
-# 152 "data/maps/NewBirchesLab/scripts.pory"
+# 150 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_PokeballOne_Text_0
 NewBirchesLab_EventScript_PokeballTwo_1:
-# 154 "data/maps/NewBirchesLab/scripts.pory"
+# 152 "data/maps/NewBirchesLab/scripts.pory"
 	waitmessage
-# 155 "data/maps/NewBirchesLab/scripts.pory"
+# 153 "data/maps/NewBirchesLab/scripts.pory"
 	releaseall
 	end
 
 NewBirchesLab_EventScript_PokeballTwo_2:
-# 135 "data/maps/NewBirchesLab/scripts.pory"
+# 133 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 0
 	goto_if_eq NewBirchesLab_EventScript_PokeballTwo_5
-# 140 "data/maps/NewBirchesLab/scripts.pory"
+# 138 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 1
 	goto_if_eq NewBirchesLab_EventScript_PokeballTwo_6
-# 145 "data/maps/NewBirchesLab/scripts.pory"
+# 143 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 2
 	goto_if_eq NewBirchesLab_EventScript_PokeballTwo_7
 	goto NewBirchesLab_EventScript_PokeballTwo_1
 
 NewBirchesLab_EventScript_PokeballTwo_5:
-# 136 "data/maps/NewBirchesLab/scripts.pory"
+# 134 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
-# 137 "data/maps/NewBirchesLab/scripts.pory"
+# 135 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_TREECKO
-# 138 "data/maps/NewBirchesLab/scripts.pory"
+# 136 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballTwo_1
 
 NewBirchesLab_EventScript_PokeballTwo_6:
-# 141 "data/maps/NewBirchesLab/scripts.pory"
+# 139 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
-# 142 "data/maps/NewBirchesLab/scripts.pory"
+# 140 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_CHIKORITA
-# 143 "data/maps/NewBirchesLab/scripts.pory"
+# 141 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballTwo_1
 
 NewBirchesLab_EventScript_PokeballTwo_7:
-# 146 "data/maps/NewBirchesLab/scripts.pory"
+# 144 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
-# 147 "data/maps/NewBirchesLab/scripts.pory"
+# 145 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_BULBASAUR
-# 148 "data/maps/NewBirchesLab/scripts.pory"
+# 146 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballTwo_1
 
 
 NewBirchesLab_EventScript_PokeballThree::
-# 160 "data/maps/NewBirchesLab/scripts.pory"
+# 158 "data/maps/NewBirchesLab/scripts.pory"
 	lockall
-# 161 "data/maps/NewBirchesLab/scripts.pory"
+# 159 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_TEMP_0, 3
-# 162 "data/maps/NewBirchesLab/scripts.pory"
+# 160 "data/maps/NewBirchesLab/scripts.pory"
 	goto_if_unset FLAG_SYS_POKEMON_GET, NewBirchesLab_EventScript_PokeballThree_2
-# 180 "data/maps/NewBirchesLab/scripts.pory"
+# 178 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_PokeballOne_Text_0
 NewBirchesLab_EventScript_PokeballThree_1:
-# 182 "data/maps/NewBirchesLab/scripts.pory"
+# 180 "data/maps/NewBirchesLab/scripts.pory"
 	waitmessage
-# 183 "data/maps/NewBirchesLab/scripts.pory"
+# 181 "data/maps/NewBirchesLab/scripts.pory"
 	releaseall
 	end
 
 NewBirchesLab_EventScript_PokeballThree_2:
-# 163 "data/maps/NewBirchesLab/scripts.pory"
+# 161 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 0
 	goto_if_eq NewBirchesLab_EventScript_PokeballThree_5
-# 168 "data/maps/NewBirchesLab/scripts.pory"
+# 166 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 1
 	goto_if_eq NewBirchesLab_EventScript_PokeballThree_6
-# 173 "data/maps/NewBirchesLab/scripts.pory"
+# 171 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_STARTER_REGION, 2
 	goto_if_eq NewBirchesLab_EventScript_PokeballThree_7
 	goto NewBirchesLab_EventScript_PokeballThree_1
 
 NewBirchesLab_EventScript_PokeballThree_5:
-# 164 "data/maps/NewBirchesLab/scripts.pory"
+# 162 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
-# 165 "data/maps/NewBirchesLab/scripts.pory"
+# 163 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_TORCHIC
-# 166 "data/maps/NewBirchesLab/scripts.pory"
+# 164 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballThree_1
 
 NewBirchesLab_EventScript_PokeballThree_6:
-# 169 "data/maps/NewBirchesLab/scripts.pory"
+# 167 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_CYNDAQUIL
-# 170 "data/maps/NewBirchesLab/scripts.pory"
+# 168 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_CYNDAQUIL
-# 171 "data/maps/NewBirchesLab/scripts.pory"
+# 169 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballThree_1
 
 NewBirchesLab_EventScript_PokeballThree_7:
-# 174 "data/maps/NewBirchesLab/scripts.pory"
+# 172 "data/maps/NewBirchesLab/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
-# 175 "data/maps/NewBirchesLab/scripts.pory"
+# 173 "data/maps/NewBirchesLab/scripts.pory"
 	setvar VAR_STARTER_CHOICE, SPECIES_CHARMANDER
-# 176 "data/maps/NewBirchesLab/scripts.pory"
+# 174 "data/maps/NewBirchesLab/scripts.pory"
 	call NewBirchesLab_EventScript_GiveStarter
 	goto NewBirchesLab_EventScript_PokeballThree_1
 
 
 NewBirchesLab_EventScript_GiveStarter::
-# 189 "data/maps/NewBirchesLab/scripts.pory"
+# 187 "data/maps/NewBirchesLab/scripts.pory"
 	showmonpic VAR_STARTER_CHOICE, 10, 3
-# 190 "data/maps/NewBirchesLab/scripts.pory"
+# 188 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_GiveStarter_Text_0, MSGBOX_YESNO
-# 191 "data/maps/NewBirchesLab/scripts.pory"
+# 189 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NewBirchesLab_EventScript_GiveStarter_1
-# 216 "data/maps/NewBirchesLab/scripts.pory"
+# 214 "data/maps/NewBirchesLab/scripts.pory"
 	hidemonpic
-# 217 "data/maps/NewBirchesLab/scripts.pory"
+# 215 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_NotChosen
 	return
 
 NewBirchesLab_EventScript_GiveStarter_1:
-# 192 "data/maps/NewBirchesLab/scripts.pory"
+# 190 "data/maps/NewBirchesLab/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 193 "data/maps/NewBirchesLab/scripts.pory"
+# 191 "data/maps/NewBirchesLab/scripts.pory"
 	setvar LITTLEROOT_STATE, 2
-# 194 "data/maps/NewBirchesLab/scripts.pory"
+# 192 "data/maps/NewBirchesLab/scripts.pory"
 	givemon VAR_STARTER_CHOICE, 50, ITEM_MASTER_BALL
-# 195 "data/maps/NewBirchesLab/scripts.pory"
+# 193 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewBirchesLab_EventScript_GiveStarter_4
-# 202 "data/maps/NewBirchesLab/scripts.pory"
+# 200 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq NewBirchesLab_EventScript_GiveStarter_5
-# 211 "data/maps/NewBirchesLab/scripts.pory"
+# 209 "data/maps/NewBirchesLab/scripts.pory"
 	hidemonpic
-# 212 "data/maps/NewBirchesLab/scripts.pory"
+# 210 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_GiveStarter_Text_3
 	return
 
 NewBirchesLab_EventScript_GiveStarter_4:
-# 196 "data/maps/NewBirchesLab/scripts.pory"
+# 194 "data/maps/NewBirchesLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 197 "data/maps/NewBirchesLab/scripts.pory"
+# 195 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_GiveStarter_Text_1
-# 198 "data/maps/NewBirchesLab/scripts.pory"
+# 196 "data/maps/NewBirchesLab/scripts.pory"
 	removeobject VAR_TEMP_0
-# 199 "data/maps/NewBirchesLab/scripts.pory"
+# 197 "data/maps/NewBirchesLab/scripts.pory"
 	call SetBallFlag
-# 200 "data/maps/NewBirchesLab/scripts.pory"
+# 198 "data/maps/NewBirchesLab/scripts.pory"
 	call NicknamePartyMon
 	return
 
 NewBirchesLab_EventScript_GiveStarter_5:
-# 203 "data/maps/NewBirchesLab/scripts.pory"
+# 201 "data/maps/NewBirchesLab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 204 "data/maps/NewBirchesLab/scripts.pory"
+# 202 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_GiveStarter_Text_1
-# 205 "data/maps/NewBirchesLab/scripts.pory"
+# 203 "data/maps/NewBirchesLab/scripts.pory"
 	removeobject VAR_TEMP_0
-# 206 "data/maps/NewBirchesLab/scripts.pory"
+# 204 "data/maps/NewBirchesLab/scripts.pory"
 	call SetBallFlag
-# 207 "data/maps/NewBirchesLab/scripts.pory"
+# 205 "data/maps/NewBirchesLab/scripts.pory"
 	call NicknameBoxMon
-# 208 "data/maps/NewBirchesLab/scripts.pory"
+# 206 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NewBirchesLab_EventScript_GiveStarter_Text_2
 	return
 
 
 SetBallFlag::
-# 224 "data/maps/NewBirchesLab/scripts.pory"
+# 222 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq SetBallFlag_2
-# 228 "data/maps/NewBirchesLab/scripts.pory"
+# 226 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_TEMP_0, 2
 	goto_if_eq SetBallFlag_5
-# 232 "data/maps/NewBirchesLab/scripts.pory"
+# 230 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_TEMP_0, 3
 	goto_if_eq SetBallFlag_7
 	return
 
 SetBallFlag_2:
-# 225 "data/maps/NewBirchesLab/scripts.pory"
+# 223 "data/maps/NewBirchesLab/scripts.pory"
 	setflag STARTER_BALL_ONE
 	return
 
 SetBallFlag_5:
-# 229 "data/maps/NewBirchesLab/scripts.pory"
+# 227 "data/maps/NewBirchesLab/scripts.pory"
 	setflag STARTER_BALL_TWO
 	return
 
 SetBallFlag_7:
-# 233 "data/maps/NewBirchesLab/scripts.pory"
+# 231 "data/maps/NewBirchesLab/scripts.pory"
 	setflag STARTER_BALL_THREE
 	return
 
 
 NicknamePartyMon::
-# 239 "data/maps/NewBirchesLab/scripts.pory"
+# 237 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 240 "data/maps/NewBirchesLab/scripts.pory"
+# 238 "data/maps/NewBirchesLab/scripts.pory"
 	hidemonpic
-# 241 "data/maps/NewBirchesLab/scripts.pory"
+# 239 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 242 "data/maps/NewBirchesLab/scripts.pory"
+# 240 "data/maps/NewBirchesLab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 243 "data/maps/NewBirchesLab/scripts.pory"
+# 241 "data/maps/NewBirchesLab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 250 "data/maps/NewBirchesLab/scripts.pory"
+# 248 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 251 "data/maps/NewBirchesLab/scripts.pory"
+# 249 "data/maps/NewBirchesLab/scripts.pory"
 	hidemonpic
-# 252 "data/maps/NewBirchesLab/scripts.pory"
+# 250 "data/maps/NewBirchesLab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_1
 	return
 
 NicknameBoxMon_1:
-# 253 "data/maps/NewBirchesLab/scripts.pory"
+# 251 "data/maps/NewBirchesLab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	return
 
 
 DontTouchThat::
-# 263 "data/maps/NewBirchesLab/scripts.pory"
+# 261 "data/maps/NewBirchesLab/scripts.pory"
 	lockall
-# 264 "data/maps/NewBirchesLab/scripts.pory"
+# 262 "data/maps/NewBirchesLab/scripts.pory"
 	msgbox DontTouchThat_Text_0
-# 265 "data/maps/NewBirchesLab/scripts.pory"
+# 263 "data/maps/NewBirchesLab/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, MoveAwayFromThere
-# 266 "data/maps/NewBirchesLab/scripts.pory"
+# 264 "data/maps/NewBirchesLab/scripts.pory"
 	waitmovement 0
-# 267 "data/maps/NewBirchesLab/scripts.pory"
+# 265 "data/maps/NewBirchesLab/scripts.pory"
 	releaseall
 	return
 
 
-# 270 "data/maps/NewBirchesLab/scripts.pory"
+# 268 "data/maps/NewBirchesLab/scripts.pory"
 MoveAwayFromThere:
-# 271 "data/maps/NewBirchesLab/scripts.pory"
+# 269 "data/maps/NewBirchesLab/scripts.pory"
 	walk_left
-# 271 "data/maps/NewBirchesLab/scripts.pory"
+# 269 "data/maps/NewBirchesLab/scripts.pory"
 	walk_left
 	step_end
 
 StopLeaving_Text_0:
-# 57 "data/maps/NewBirchesLab/scripts.pory"
+# 55 "data/maps/NewBirchesLab/scripts.pory"
 	.string "You Need To Choose a Pokemon$"
 
 NewBirchesLab_EventScript_Birch_Text_0:
-# 71 "data/maps/NewBirchesLab/scripts.pory"
+# 69 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Would you like to see more?$"
 
 NewBirchesLab_EventScript_Birch_Text_1:
-# 86 "data/maps/NewBirchesLab/scripts.pory"
+# 84 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Choose wisely...$"
 
 NewBirchesLab_EventScript_Birch_Text_2:
-# 91 "data/maps/NewBirchesLab/scripts.pory"
+# 89 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Take care of your Pokemon$"
 
 NewBirchesLab_EventScript_PokeballOne_Text_0:
-# 124 "data/maps/NewBirchesLab/scripts.pory"
+# 122 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Don't Take Another$"
 
 NewBirchesLab_EventScript_GiveStarter_Text_0:
-# 190 "data/maps/NewBirchesLab/scripts.pory"
+# 188 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Do you want to choose {STR_VAR_1}?$"
 
 NewBirchesLab_EventScript_GiveStarter_Text_1:
-# 197 "data/maps/NewBirchesLab/scripts.pory"
+# 195 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Recieved {STR_VAR_1}$"
 
 NewBirchesLab_EventScript_GiveStarter_Text_2:
-# 208 "data/maps/NewBirchesLab/scripts.pory"
+# 206 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Transferred {STR_VAR_1} to PC$"
 
 NewBirchesLab_EventScript_GiveStarter_Text_3:
-# 212 "data/maps/NewBirchesLab/scripts.pory"
+# 210 "data/maps/NewBirchesLab/scripts.pory"
 	.string "No More Room For Pokemon$"
 
 NicknamePartyMon_Text_0:
-# 239 "data/maps/NewBirchesLab/scripts.pory"
+# 237 "data/maps/NewBirchesLab/scripts.pory"
 	.string "Give a nickname?$"
 
 DontTouchThat_Text_0:
-# 264 "data/maps/NewBirchesLab/scripts.pory"
+# 262 "data/maps/NewBirchesLab/scripts.pory"
 	.string "DONT TOUCH THAT$"
 
 BeginAdventureText::
-# 44 "data/maps/NewBirchesLab/scripts.pory"
+# 42 "data/maps/NewBirchesLab/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Birch:{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Hello {PLAYER}, my name is Prof Birch\n"
 	.string "This is my lab.\p"
 	.string "Today is the day that you will be\n"
@@ -536,5 +536,5 @@ BeginAdventureText::
 	.string "come and talk to me.\n$"
 
 NewBirchesLab_NotChosen::
-# 257 "data/maps/NewBirchesLab/scripts.pory"
+# 255 "data/maps/NewBirchesLab/scripts.pory"
 	.string "You did not choose {STR_VAR_1}$"
